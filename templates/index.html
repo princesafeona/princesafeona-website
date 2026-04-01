@@ -8,37 +8,35 @@
 </head>
 <body>
     <div class="viewport">
-        <div class="stage">
-            <img
-                class="brand-logo"
-                src="{{ url_for('static', filename='img/logo.svg') }}"
-                alt="Princesa Feona logo"
-            >
+        <img
+            class="brand-logo"
+            src="{{ url_for('static', filename='img/logo.svg') }}"
+            alt="Princesa Feona logo"
+        >
 
-            <header class="topbar">
+        <header class="topbar">
             <nav class="menu" aria-label="Primary">
                 <a href="#">ABOUT</a>
                 <a href="#">SHOP</a>
                 <a href="#">INSTAGRAM</a>
                 <a href="#">CONTACT</a>
             </nav>
-            </header>
+        </header>
 
-            <main class="hero">
-                <section class="video-frame" aria-label="Homepage video">
-                    <video autoplay muted loop playsinline>
-                        <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+        <main class="hero">
+            <section class="video-frame" aria-label="Homepage video">
+                <video autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-                    <button class="sound-toggle" type="button">SOUND OFF</button>
-                </section>
-            </main>
+                <button class="sound-toggle" type="button">SOUND OFF</button>
+            </section>
+        </main>
 
-            <footer class="site-footer">
-                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
-            </footer>
-        </div>
+        <footer class="site-footer">
+            <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
+        </footer>
     </div>
 </body>
 </html>
