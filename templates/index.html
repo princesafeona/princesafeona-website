@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prince</title>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Geist.ttf') }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Geist-Mono.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -34,7 +36,7 @@
 
         <header class="topbar">
             <nav class="menu" aria-label="Primary">
-                <a href="#">ABOUT</a>
+                <button class="menu-link" id="about-trigger" type="button">ABOUT</button>
                 <a href="#">SHOP</a>
                 <a href="#">INSTAGRAM</a>
                 <a href="#">CONTACT</a>
@@ -57,6 +59,37 @@
         <footer class="site-footer">
             <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
         </footer>
+    </div>
+
+    <div class="about-overlay" id="about-overlay" aria-hidden="true">
+        <div class="about-panel">
+            <button class="about-close" id="about-close" type="button" aria-label="Close about panel">
+                <img src="{{ url_for('static', filename='img/close.svg') }}" alt="">
+            </button>
+
+            <div class="about-copy">
+                <p>
+                    I'm a visual director. I <span>work with design, film, and animation.</span>
+                    I create <span>moving universes</span> for brands and artistic projects,
+                    <span>building custom teams.</span> I like to play, move, experiment.
+                </p>
+                <p>
+                    I'm always up for <span>bold, playful, and experimental ideas.</span>
+                    You can reach me at
+                    <a href="mailto:hi@princesafeona.com">hi@princesafeona.com</a>
+                </p>
+            </div>
+
+            <a class="about-linkedin" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                LINKEDIN
+            </a>
+
+            <img
+                class="about-corner-logo"
+                src="{{ url_for('static', filename='img/about-logo.svg') }}"
+                alt="About logo"
+            >
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='main.js') }}" defer></script>
