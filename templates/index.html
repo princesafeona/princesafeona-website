@@ -3,14 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Flask App</title>
+    <title>Prince</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Flask</h1>
-        <p>This is a simple beginner-friendly Flask web app.</p>
-        <p>You can edit the text in <code>templates/index.html</code>.</p>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand-mark" aria-label="Prince logo">
+                <span class="brand-dot">P</span>
+                <span class="brand-dot">R</span>
+                <span class="brand-dot">I</span>
+                <span class="brand-dot">N</span>
+                <span class="brand-dot">C</span>
+                <span class="brand-dot">E</span>
+            </div>
+
+            <nav class="menu" aria-label="Primary">
+                <a href="#">ABOUT</a>
+                <a href="#">SHOP</a>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">CONTACT</a>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <section class="video-frame" aria-label="Homepage video">
+                <video autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <button class="sound-toggle" type="button">SOUND OFF</button>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Prince. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
