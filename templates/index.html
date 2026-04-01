@@ -50,6 +50,31 @@
                     Your browser does not support the video tag.
                 </video>
 
+                <div class="about-layer" id="about-layer" aria-hidden="true">
+                    <button class="about-close" id="about-close" type="button" aria-label="Close about panel">
+                        <span class="about-close-icon" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="about-copy">
+                        <p>
+                            I'm a visual director. I <span>work with design, film, and animation.</span>
+                            I create <span>moving universes</span> for brands and artistic projects,
+                            <span>building custom teams.</span> I like to play, move, experiment.
+                        </p>
+                        <p>
+                            I'm always up for <span>bold, playful, and experimental ideas.</span>
+                            You can reach me at
+                            <a href="mailto:hi@princesafeona.com">hi@princesafeona.com</a>
+                        </p>
+                    </div>
+
+                    <a class="about-linkedin" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                        LINKEDIN
+                    </a>
+
+                    <span class="about-corner-logo" aria-hidden="true"></span>
+                </div>
+
                 <button class="sound-toggle is-muted" id="sound-toggle" type="button" aria-pressed="false">
                     SOUND OFF
                 </button>
@@ -59,33 +84,6 @@
         <footer class="site-footer">
             <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
         </footer>
-    </div>
-
-    <div class="about-overlay" id="about-overlay" aria-hidden="true">
-        <div class="about-panel">
-            <button class="about-close" id="about-close" type="button" aria-label="Close about panel">
-                <span class="about-close-icon" aria-hidden="true"></span>
-            </button>
-
-            <div class="about-copy">
-                <p>
-                    I'm a visual director. I <span>work with design, film, and animation.</span>
-                    I create <span>moving universes</span> for brands and artistic projects,
-                    <span>building custom teams.</span> I like to play, move, experiment.
-                </p>
-                <p>
-                    I'm always up for <span>bold, playful, and experimental ideas.</span>
-                    You can reach me at
-                    <a href="mailto:hi@princesafeona.com">hi@princesafeona.com</a>
-                </p>
-            </div>
-
-            <a class="about-linkedin" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-                LINKEDIN
-            </a>
-
-            <span class="about-corner-logo" aria-hidden="true"></span>
-        </div>
     </div>
 
     <script src="{{ url_for('static', filename='main.js') }}" defer></script>
