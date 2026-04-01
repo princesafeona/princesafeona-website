@@ -3,6 +3,9 @@ const initHomepage = () => {
     const loadingCounter = document.getElementById("loading-counter");
     const heroVideo = document.getElementById("hero-video");
     const soundToggle = document.getElementById("sound-toggle");
+    const aboutTrigger = document.getElementById("about-trigger");
+    const aboutOverlay = document.getElementById("about-overlay");
+    const aboutClose = document.getElementById("about-close");
 
     if (heroVideo) {
         heroVideo.muted = true;
@@ -38,8 +41,37 @@ const initHomepage = () => {
         });
     }
 
+    if (aboutTrigger && aboutOverlay && aboutClose) {
+        const openAbout = () => {
+            document.body.classList.add("about-open");
+            aboutOverlay.classList.add("is-visible");
+            aboutOverlay.setAttribute("aria-hidden", "false");
+        };
+
+        const closeAbout = () => {
+            document.body.classList.remove("about-open");
+            aboutOverlay.classList.remove("is-visible");
+            aboutOverlay.setAttribute("aria-hidden", "true");
+        };
+
+        aboutTrigger.addEventListener("click", openAbout);
+        aboutClose.addEventListener("click", closeAbout);
+
+        aboutOverlay.addEventListener("click", (event) => {
+            if (event.target === aboutOverlay) {
+                closeAbout();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && aboutOverlay.classList.contains("is-visible")) {
+                closeAbout();
+            }
+        });
+    }
+
     if (loadingOverlay && loadingCounter) {
-        const duration = 3000;
+        const duration = 4000;
         const start = performance.now();
 
         const tick = (now) => {
