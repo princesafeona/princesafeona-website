@@ -181,10 +181,11 @@ button {
     height: min(77.43vh, calc((100vw - 160px) / 1.545));
     aspect-ratio: 1058 / 597;
     margin-top: 12px;
-    background: transparent;
+    background: #000000;
     overflow: hidden;
     box-shadow: none;
     filter: none;
+    isolation: isolate;
     -webkit-mask-image: none;
     mask-image: none;
 }
@@ -261,9 +262,15 @@ button {
     pointer-events: none;
     transition: visibility 0.35s ease;
     padding: 22px 24px 18px 22px;
+    background: transparent;
+    opacity: 1;
+    filter: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    clip-path: inset(0);
+    contain: paint;
 }
 
 .about-layer.is-visible {
