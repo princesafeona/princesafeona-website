@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+        <img
+            class="loading-logo"
+            src="{{ url_for('static', filename='img/loading-logo.svg') }}"
+            alt="Loading logo"
+        >
+
+        <div class="loading-band" aria-label="Loading screen">
+            <p class="loading-name">PRINCESA FEONA</p>
+            <img
+                class="loading-gif"
+                src="{{ url_for('static', filename='img/loading.gif') }}"
+                alt="Loading animation"
+            >
+            <p class="loading-status">LOADING <span id="loading-counter">(0%)</span></p>
+        </div>
+    </div>
+
     <div class="viewport">
         <img
             class="brand-logo"
@@ -25,12 +43,14 @@
 
         <main class="hero">
             <section class="video-frame" aria-label="Homepage video">
-                <video autoplay muted loop playsinline>
+                <video id="hero-video" autoplay muted loop playsinline preload="auto">
                     <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <button class="sound-toggle" type="button">SOUND OFF</button>
+                <button class="sound-toggle is-muted" id="sound-toggle" type="button" aria-pressed="false">
+                    SOUND OFF
+                </button>
             </section>
         </main>
 
@@ -38,5 +58,7 @@
             <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
         </footer>
     </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
