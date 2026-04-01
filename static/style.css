@@ -183,6 +183,17 @@ button {
     margin-top: 12px;
     background: transparent;
     overflow: hidden;
+    box-shadow: none;
+    filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.video-frame::before,
+.video-frame::after,
+.about-layer::before,
+.about-layer::after {
+    content: none !important;
 }
 
 .video-frame video {
@@ -197,7 +208,7 @@ button {
 
 .about-open .video-frame video {
     filter: blur(28px);
-    transform: scale(1.06);
+    transform: scale(1.12);
 }
 
 .sound-toggle {
