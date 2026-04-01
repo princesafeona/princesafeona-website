@@ -64,7 +64,7 @@
     <div class="about-overlay" id="about-overlay" aria-hidden="true">
         <div class="about-panel">
             <button class="about-close" id="about-close" type="button" aria-label="Close about panel">
-                <img src="{{ url_for('static', filename='img/close.svg') }}" alt="">
+                <span class="about-close-icon" aria-hidden="true"></span>
             </button>
 
             <div class="about-copy">
@@ -84,11 +84,7 @@
                 LINKEDIN
             </a>
 
-            <img
-                class="about-corner-logo"
-                src="{{ url_for('static', filename='img/about-logo.svg') }}"
-                alt="About logo"
-            >
+            <span class="about-corner-logo" aria-hidden="true"></span>
         </div>
     </div>
 
