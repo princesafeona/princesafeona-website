@@ -181,9 +181,8 @@ button {
     height: min(77.43vh, calc((100vw - 160px) / 1.545));
     aspect-ratio: 1058 / 597;
     margin-top: 12px;
-    background: #000000;
+    background: transparent;
     overflow: hidden;
-    isolation: isolate;
 }
 
 .video-frame video {
@@ -247,10 +246,9 @@ button {
     position: absolute;
     inset: 0;
     z-index: 2;
-    opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
+    transition: visibility 0.35s ease;
     padding: 22px 24px 18px 22px;
     display: flex;
     flex-direction: column;
@@ -258,16 +256,8 @@ button {
 }
 
 .about-layer.is-visible {
-    opacity: 1;
     visibility: visible;
     pointer-events: auto;
-}
-
-.about-copy,
-.about-linkedin,
-.about-corner-logo,
-.about-close {
-    mix-blend-mode: difference;
 }
 
 .about-copy {
@@ -293,6 +283,18 @@ button {
     color: var(--about-blend);
 }
 
+.about-copy,
+.about-copy span,
+.about-copy a,
+.about-linkedin,
+.about-close,
+.about-close-icon,
+.about-corner-logo,
+.about-corner-logo * {
+    color: var(--about-blend);
+    mix-blend-mode: difference;
+}
+
 .about-copy a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -309,21 +311,14 @@ button {
     border: 0;
     background: transparent;
     cursor: pointer;
+    color: var(--about-blend);
 }
 
 .about-close-icon {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: var(--about-blend);
-    -webkit-mask-image: url("/static/img/close.svg");
-    mask-image: url("/static/img/close.svg");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    color: inherit;
 }
 
 .about-linkedin {
@@ -342,13 +337,6 @@ button {
     bottom: 18px;
     width: min(4.4vw, 56px);
     aspect-ratio: 1;
-    background-color: var(--about-blend);
-    -webkit-mask-image: url("/static/img/about-logo.svg");
-    mask-image: url("/static/img/about-logo.svg");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    color: var(--about-blend);
+    overflow: visible;
 }
