@@ -7,39 +7,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="page-shell">
-        <header class="topbar">
-            <div class="brand-mark" aria-label="Prince logo">
-                <span class="brand-dot">P</span>
-                <span class="brand-dot">R</span>
-                <span class="brand-dot">I</span>
-                <span class="brand-dot">N</span>
-                <span class="brand-dot">C</span>
-                <span class="brand-dot">E</span>
-            </div>
+    <div class="viewport">
+        <div class="stage">
+            <img
+                class="brand-logo"
+                src="{{ url_for('static', filename='img/logo.svg') }}"
+                alt="Princesa Feona logo"
+            >
 
+            <header class="topbar">
             <nav class="menu" aria-label="Primary">
                 <a href="#">ABOUT</a>
                 <a href="#">SHOP</a>
                 <a href="#">INSTAGRAM</a>
                 <a href="#">CONTACT</a>
             </nav>
-        </header>
+            </header>
 
-        <main class="hero">
-            <section class="video-frame" aria-label="Homepage video">
-                <video autoplay muted loop playsinline>
-                    <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <main class="hero">
+                <section class="video-frame" aria-label="Homepage video">
+                    <video autoplay muted loop playsinline>
+                        <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
-                <button class="sound-toggle" type="button">SOUND OFF</button>
-            </section>
-        </main>
+                    <button class="sound-toggle" type="button">SOUND OFF</button>
+                </section>
+            </main>
 
-        <footer class="site-footer">
-            <p>&copy; 2026 Prince. All rights reserved.</p>
-        </footer>
+            <footer class="site-footer">
+                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA. ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
