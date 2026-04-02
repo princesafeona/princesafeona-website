@@ -102,8 +102,8 @@ const initHomepage = () => {
         let targetY = currentY;
 
         const renderCursor = () => {
-            currentX += (targetX - currentX) * 0.18;
-            currentY += (targetY - currentY) * 0.18;
+            currentX += (targetX - currentX) * 0.22;
+            currentY += (targetY - currentY) * 0.22;
             customCursor.style.transform = `translate(${currentX - 50}px, ${currentY - 50}px)`;
             window.requestAnimationFrame(renderCursor);
         };
