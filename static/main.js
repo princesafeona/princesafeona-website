@@ -7,9 +7,26 @@ const initHomepage = () => {
     const aboutLayer = document.getElementById("about-layer");
     const aboutClose = document.getElementById("about-close");
     const customCursor = document.getElementById("custom-cursor");
+    const mobileHeroVideo = document.getElementById("mobile-hero-video");
+    const mobileAboutVideo = document.getElementById("mobile-about-video");
+    const mobileSoundToggle = document.getElementById("mobile-sound-toggle");
+    const mobileMenuTrigger = document.getElementById("mobile-menu-trigger");
+    const mobileMenuScreen = document.getElementById("mobile-menu-screen");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+    const mobileAboutScreen = document.getElementById("mobile-about-screen");
+    const mobileAboutTrigger = document.getElementById("mobile-about-trigger");
+    const mobileAboutClose = document.getElementById("mobile-about-close");
 
     if (heroVideo) {
         heroVideo.muted = true;
+    }
+
+    if (mobileHeroVideo) {
+        mobileHeroVideo.muted = true;
+    }
+
+    if (mobileAboutVideo) {
+        mobileAboutVideo.muted = true;
     }
 
     if (soundToggle && heroVideo) {
@@ -39,6 +56,36 @@ const initHomepage = () => {
             }
 
             updateSoundLabel();
+        });
+    }
+
+    if (mobileSoundToggle && mobileHeroVideo) {
+        const updateMobileSound = () => {
+            if (mobileHeroVideo.muted) {
+                mobileSoundToggle.textContent = "SOUND OFF";
+                mobileSoundToggle.classList.add("is-muted");
+                mobileSoundToggle.setAttribute("aria-pressed", "false");
+            } else {
+                mobileSoundToggle.textContent = "SOUND ON";
+                mobileSoundToggle.classList.remove("is-muted");
+                mobileSoundToggle.setAttribute("aria-pressed", "true");
+            }
+        };
+
+        updateMobileSound();
+
+        mobileSoundToggle.addEventListener("click", async () => {
+            mobileHeroVideo.muted = !mobileHeroVideo.muted;
+
+            if (!mobileHeroVideo.muted) {
+                try {
+                    await mobileHeroVideo.play();
+                } catch (error) {
+                    mobileHeroVideo.muted = true;
+                }
+            }
+
+            updateMobileSound();
         });
     }
 
@@ -86,6 +133,40 @@ const initHomepage = () => {
         });
     }
 
+    if (mobileMenuTrigger && mobileMenuScreen && mobileMenuClose && mobileAboutScreen && mobileAboutTrigger && mobileAboutClose) {
+        const openMobileMenu = () => {
+            mobileMenuScreen.classList.add("is-visible");
+            mobileMenuScreen.setAttribute("aria-hidden", "false");
+        };
+
+        const closeMobileMenu = () => {
+            mobileMenuScreen.classList.remove("is-visible");
+            mobileMenuScreen.setAttribute("aria-hidden", "true");
+        };
+
+        const openMobileAbout = () => {
+            if (mobileHeroVideo && mobileAboutVideo) {
+                mobileAboutVideo.currentTime = mobileHeroVideo.currentTime || 0;
+                mobileAboutVideo.play().catch(() => {});
+            }
+
+            mobileAboutScreen.classList.add("is-visible");
+            mobileAboutScreen.setAttribute("aria-hidden", "false");
+            closeMobileMenu();
+        };
+
+        const closeMobileAbout = () => {
+            mobileAboutScreen.classList.remove("is-visible");
+            mobileAboutScreen.setAttribute("aria-hidden", "true");
+            openMobileMenu();
+        };
+
+        mobileMenuTrigger.addEventListener("click", openMobileMenu);
+        mobileMenuClose.addEventListener("click", closeMobileMenu);
+        mobileAboutTrigger.addEventListener("click", openMobileAbout);
+        mobileAboutClose.addEventListener("click", closeMobileAbout);
+    }
+
     if (loadingOverlay && loadingCounter) {
         const duration = 4000;
         const start = performance.now();
@@ -106,6 +187,11 @@ const initHomepage = () => {
                 heroVideo.currentTime = 0;
 
                 heroVideo.play().catch(() => {});
+            }
+
+            if (mobileHeroVideo) {
+                mobileHeroVideo.currentTime = 0;
+                mobileHeroVideo.play().catch(() => {});
             }
 
             loadingOverlay.classList.add("is-hidden");

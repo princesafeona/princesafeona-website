@@ -397,3 +397,311 @@ body.page-ready .video-frame:hover {
 body.cursor-active .custom-cursor {
     opacity: 1;
 }
+
+.mobile-shell {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow: hidden;
+    }
+
+    .viewport,
+    .custom-cursor {
+        display: none;
+    }
+
+    .mobile-shell {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        overflow: hidden;
+    }
+
+    .loading-overlay {
+        background: #111111;
+    }
+
+    .loading-logo {
+        top: 24px;
+        left: 22px;
+        width: 170px;
+    }
+
+    .loading-band {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .loading-name {
+        position: absolute;
+        left: 22px;
+        bottom: 52px;
+        font-size: 0.95rem;
+    }
+
+    .loading-status {
+        position: absolute;
+        left: 22px;
+        bottom: 26px;
+        justify-self: auto;
+        font-size: 0.95rem;
+    }
+
+    .loading-gif {
+        width: 190px;
+    }
+
+    .mobile-home,
+    .mobile-menu-screen,
+    .mobile-about-screen {
+        position: absolute;
+        inset: 0;
+    }
+
+    .mobile-home {
+        background: var(--bg);
+        padding: 20px 22px 26px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .mobile-logo {
+        width: 248px;
+        max-width: 68vw;
+        height: auto;
+    }
+
+    .mobile-menu-trigger {
+        margin-top: 3px;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 0.95rem;
+        line-height: 1;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .mobile-video-frame {
+        position: relative;
+        margin-top: 28px;
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        background: #180807;
+        overflow: hidden;
+    }
+
+    .mobile-video-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: rotate(90deg) scale(1.55);
+        transform-origin: center;
+        display: block;
+    }
+
+    .mobile-sound-toggle {
+        position: absolute;
+        left: 10px;
+        top: 14px;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: #ffffff;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 0.7rem;
+        line-height: 1;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+    }
+
+    .mobile-sound-toggle.is-muted {
+        text-decoration: line-through;
+    }
+
+    .mobile-video-mark {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        width: 34px;
+        height: auto;
+        color: #59d0ff;
+    }
+
+    .mobile-rotate-note {
+        margin: 18px 0 0;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 0.92rem;
+        line-height: 1.12;
+    }
+
+    .mobile-menu-screen,
+    .mobile-about-screen {
+        background: #111111;
+        color: #f3f1ec;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .mobile-menu-screen.is-visible,
+    .mobile-about-screen.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-screen {
+        padding: 26px 22px 24px;
+    }
+
+    .mobile-close {
+        position: absolute;
+        top: 22px;
+        right: 18px;
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #f3f1ec;
+    }
+
+    .mobile-close-icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .mobile-menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 8px;
+    }
+
+    .mobile-menu-link {
+        align-self: flex-start;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: #f3f1ec;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 1.2rem;
+        line-height: 1.05;
+        text-decoration: none;
+    }
+
+    .mobile-footer {
+        position: absolute;
+        left: 22px;
+        bottom: 26px;
+        color: rgba(243, 241, 236, 0.35);
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 0.78rem;
+        line-height: 1.15;
+    }
+
+    .mobile-footer p {
+        margin: 0;
+    }
+
+    .mobile-about-screen {
+        display: flex;
+        flex-direction: column;
+        background: #111111;
+    }
+
+    .mobile-about-content {
+        flex: 1;
+        padding: 20px 22px 0;
+    }
+
+    .mobile-about-media {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        background: #200908;
+    }
+
+    .mobile-about-media video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(26px);
+        transform: scale(1.14);
+    }
+
+    .mobile-about-copy {
+        position: relative;
+        z-index: 1;
+        padding: 18px 16px 0;
+        color: #45c8ff;
+        font-family: "Geist", Arial, sans-serif;
+        font-size: clamp(1.05rem, 4.8vw, 1.7rem);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+    }
+
+    .mobile-about-copy p {
+        margin: 0;
+    }
+
+    .mobile-about-copy p + p {
+        margin-top: 26px;
+    }
+
+    .mobile-about-copy span,
+    .mobile-about-copy a {
+        color: #0ea9df;
+    }
+
+    .mobile-about-copy a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .mobile-about-linkedin {
+        position: absolute;
+        left: 16px;
+        bottom: 18px;
+        z-index: 1;
+        color: #0ea9df;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 0.9rem;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+    .mobile-about-footer {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        padding: 0 22px 24px;
+        margin-top: auto;
+        background: #0c0c0c;
+    }
+}
