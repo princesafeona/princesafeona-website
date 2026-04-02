@@ -526,8 +526,8 @@ body.cursor-active .custom-cursor {
     .mobile-video-frame video {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        transform: rotate(90deg) scale(1.02);
+        object-fit: cover;
+        transform: rotate(90deg) scale(1.18);
         transform-origin: center;
         display: block;
     }
@@ -652,7 +652,7 @@ body.cursor-active .custom-cursor {
     .mobile-about-content {
         flex: 1;
         min-height: 0;
-        padding: 20px 22px 0;
+        padding: 12px 22px 0;
     }
 
     .mobile-about-media {
@@ -662,7 +662,7 @@ body.cursor-active .custom-cursor {
         min-height: 0;
         overflow: hidden;
         background: #200908;
-        padding-top: 34px;
+        padding-top: 12px;
     }
 
     .mobile-about-media video {
@@ -678,11 +678,12 @@ body.cursor-active .custom-cursor {
     .mobile-about-copy {
         position: relative;
         z-index: 1;
-        padding: 26px 16px 0;
+        max-width: 70%;
+        padding: 12px 16px 0;
         color: #45c8ff;
         font-family: "Geist", Arial, sans-serif;
-        font-size: clamp(1.05rem, 4.8vw, 1.7rem);
-        line-height: 1.04;
+        font-size: clamp(1.3rem, 5.9vw, 2.15rem);
+        line-height: 1.03;
         letter-spacing: -0.03em;
     }
 
@@ -707,7 +708,7 @@ body.cursor-active .custom-cursor {
     .mobile-about-linkedin {
         position: absolute;
         left: 16px;
-        bottom: 18px;
+        bottom: 52px;
         z-index: 1;
         color: #0ea9df;
         font-family: "Geist Mono", "Courier New", monospace;
@@ -720,7 +721,7 @@ body.cursor-active .custom-cursor {
         position: relative;
         left: auto;
         bottom: auto;
-        padding: 0 22px 24px;
+        padding: 30px 22px 32px;
         margin-top: auto;
         background: #0c0c0c;
     }
