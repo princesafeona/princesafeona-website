@@ -44,6 +44,15 @@ body {
     overflow: hidden;
 }
 
+@media (min-width: 901px) {
+    body,
+    a,
+    button,
+    video {
+        cursor: none;
+    }
+}
+
 a,
 button {
     color: inherit;
@@ -188,6 +197,16 @@ button {
     isolation: isolate;
     -webkit-mask-image: none;
     mask-image: none;
+    transform: scale(0.94);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-ready .video-frame {
+    transform: scale(1);
+}
+
+body.page-ready .video-frame:hover {
+    transform: scale(1.018);
 }
 
 .video-frame::before,
@@ -200,7 +219,7 @@ button {
 .video-frame video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
     background: transparent;
@@ -357,4 +376,24 @@ button {
     aspect-ratio: 1;
     color: var(--about-blend);
     overflow: visible;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 999px;
+    background: #000000;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+}
+
+body.cursor-active .custom-cursor {
+    opacity: 1;
 }
