@@ -407,6 +407,12 @@ body.cursor-active .custom-cursor {
         overflow: hidden;
     }
 
+    html,
+    body {
+        height: 100dvh;
+        min-height: 100svh;
+    }
+
     .viewport,
     .custom-cursor {
         display: none;
@@ -416,7 +422,8 @@ body.cursor-active .custom-cursor {
         display: block;
         position: relative;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
+        min-height: 100svh;
         background: var(--bg);
         color: var(--ink);
         overflow: hidden;
@@ -424,39 +431,42 @@ body.cursor-active .custom-cursor {
 
     .loading-overlay {
         background: #111111;
+        height: 100dvh;
+        min-height: 100svh;
     }
 
     .loading-logo {
         top: 24px;
         left: 22px;
-        width: 170px;
+        width: min(248px, 68vw);
+        max-width: none;
     }
 
     .loading-band {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        padding: 0;
+        padding: 0 0 clamp(124px, 16svh, 148px);
     }
 
     .loading-name {
         position: absolute;
         left: 22px;
-        bottom: 52px;
+        bottom: 66px;
         font-size: 0.95rem;
     }
 
     .loading-status {
         position: absolute;
         left: 22px;
-        bottom: 26px;
+        bottom: 30px;
         justify-self: auto;
         font-size: 0.95rem;
     }
 
     .loading-gif {
-        width: 190px;
+        width: min(270px, 64vw);
     }
 
     .mobile-home,
@@ -464,13 +474,18 @@ body.cursor-active .custom-cursor {
     .mobile-about-screen {
         position: absolute;
         inset: 0;
+        height: 100dvh;
+        min-height: 100svh;
     }
 
     .mobile-home {
         background: var(--bg);
-        padding: 20px 22px 26px;
+        height: 100dvh;
+        min-height: 100svh;
+        padding: 20px 22px 16px;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
     }
 
     .mobile-header {
@@ -481,8 +496,8 @@ body.cursor-active .custom-cursor {
     }
 
     .mobile-logo {
-        width: 248px;
-        max-width: 68vw;
+        width: min(248px, 68vw);
+        max-width: none;
         height: auto;
     }
 
@@ -500,7 +515,7 @@ body.cursor-active .custom-cursor {
 
     .mobile-video-frame {
         position: relative;
-        margin-top: 28px;
+        margin-top: 16px;
         width: 100%;
         flex: 1;
         min-height: 0;
@@ -511,8 +526,8 @@ body.cursor-active .custom-cursor {
     .mobile-video-frame video {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        transform: rotate(90deg) scale(1.55);
+        object-fit: contain;
+        transform: rotate(90deg) scale(1.02);
         transform-origin: center;
         display: block;
     }
@@ -547,10 +562,11 @@ body.cursor-active .custom-cursor {
     }
 
     .mobile-rotate-note {
-        margin: 18px 0 0;
+        margin: 10px 0 0;
         font-family: "Geist Mono", "Courier New", monospace;
-        font-size: 0.92rem;
+        font-size: 0.8rem;
         line-height: 1.12;
+        flex-shrink: 0;
     }
 
     .mobile-menu-screen,
@@ -578,6 +594,7 @@ body.cursor-active .custom-cursor {
         position: absolute;
         top: 22px;
         right: 18px;
+        z-index: 3;
         width: 34px;
         height: 34px;
         padding: 0;
@@ -629,10 +646,12 @@ body.cursor-active .custom-cursor {
         display: flex;
         flex-direction: column;
         background: #111111;
+        padding-top: 0;
     }
 
     .mobile-about-content {
         flex: 1;
+        min-height: 0;
         padding: 20px 22px 0;
     }
 
@@ -643,6 +662,7 @@ body.cursor-active .custom-cursor {
         min-height: 0;
         overflow: hidden;
         background: #200908;
+        padding-top: 34px;
     }
 
     .mobile-about-media video {
@@ -658,7 +678,7 @@ body.cursor-active .custom-cursor {
     .mobile-about-copy {
         position: relative;
         z-index: 1;
-        padding: 18px 16px 0;
+        padding: 26px 16px 0;
         color: #45c8ff;
         font-family: "Geist", Arial, sans-serif;
         font-size: clamp(1.05rem, 4.8vw, 1.7rem);
