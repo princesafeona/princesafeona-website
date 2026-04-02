@@ -120,6 +120,129 @@
         </footer>
     </div>
 
+    <div class="mobile-shell" aria-hidden="true">
+        <div class="mobile-home" id="mobile-home">
+            <header class="mobile-header">
+                <img
+                    class="mobile-logo"
+                    src="{{ url_for('static', filename='img/logo.svg') }}"
+                    alt="Princesa Feona logo"
+                >
+                <button class="mobile-menu-trigger" id="mobile-menu-trigger" type="button">MENU</button>
+            </header>
+
+            <section class="mobile-video-frame" aria-label="Mobile homepage video">
+                <video id="mobile-hero-video" autoplay muted loop playsinline preload="auto">
+                    <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <button class="mobile-sound-toggle is-muted" id="mobile-sound-toggle" type="button" aria-pressed="false">
+                    SOUND OFF
+                </button>
+
+                <svg class="mobile-video-mark" viewBox="0 0 69 57" aria-hidden="true">
+                    <circle cx="21.938" cy="24.314" r="4.187" fill="currentColor"></circle>
+                    <circle cx="21.938" cy="15.94" r="4.187" fill="currentColor"></circle>
+                    <circle cx="13.563" cy="32.687" r="4.187" fill="currentColor"></circle>
+                    <circle cx="30.313" cy="32.687" r="4.187" fill="currentColor"></circle>
+                    <circle cx="38.688" cy="32.687" r="4.187" fill="currentColor"></circle>
+                    <circle cx="47.062" cy="24.314" r="4.187" fill="currentColor"></circle>
+                    <circle cx="47.062" cy="15.94" r="4.187" fill="currentColor"></circle>
+                    <circle cx="63.813" cy="24.314" r="4.187" fill="currentColor"></circle>
+                    <circle cx="63.813" cy="15.94" r="4.187" fill="currentColor"></circle>
+                    <circle cx="5.187" cy="24.314" r="4.187" fill="currentColor"></circle>
+                    <circle cx="5.187" cy="15.94" r="4.187" fill="currentColor"></circle>
+                    <circle cx="21.938" cy="7.567" r="4.187" fill="currentColor"></circle>
+                    <circle cx="47.062" cy="7.567" r="4.187" fill="currentColor"></circle>
+                    <circle cx="55.438" cy="32.687" r="4.187" fill="currentColor"></circle>
+                    <circle cx="13.563" cy="41.06" r="4.187" fill="currentColor"></circle>
+                    <circle cx="21.938" cy="41.06" r="4.187" fill="currentColor"></circle>
+                    <circle cx="30.313" cy="41.06" r="4.187" fill="currentColor"></circle>
+                    <circle cx="38.688" cy="41.06" r="4.187" fill="currentColor"></circle>
+                    <circle cx="47.062" cy="41.06" r="4.187" fill="currentColor"></circle>
+                    <circle cx="21.938" cy="49.433" r="4.187" fill="currentColor"></circle>
+                    <circle cx="30.313" cy="49.433" r="4.187" fill="currentColor"></circle>
+                    <circle cx="38.688" cy="49.433" r="4.187" fill="currentColor"></circle>
+                    <circle cx="47.062" cy="49.433" r="4.187" fill="currentColor"></circle>
+                    <circle cx="55.438" cy="41.06" r="4.187" fill="currentColor"></circle>
+                </svg>
+            </section>
+
+            <p class="mobile-rotate-note">
+                YES,<br>
+                ROTATE YOUR PHONE TO SEE IT BETTER.
+            </p>
+        </div>
+
+        <div class="mobile-menu-screen" id="mobile-menu-screen" aria-hidden="true">
+            <button class="mobile-close" id="mobile-menu-close" type="button" aria-label="Close menu">
+                <svg class="mobile-close-icon" viewBox="0 0 45 44" aria-hidden="true">
+                    <circle cx="6.262" cy="6.213" r="5.206" fill="currentColor"></circle>
+                    <circle cx="16.773" cy="16.738" r="5.206" fill="currentColor"></circle>
+                    <circle cx="27.283" cy="27.262" r="5.206" fill="currentColor"></circle>
+                    <circle cx="37.794" cy="37.787" r="5.206" fill="currentColor"></circle>
+                    <circle cx="37.738" cy="6.213" r="5.206" fill="currentColor"></circle>
+                    <circle cx="27.227" cy="16.738" r="5.206" fill="currentColor"></circle>
+                    <circle cx="16.717" cy="27.262" r="5.206" fill="currentColor"></circle>
+                    <circle cx="6.206" cy="37.787" r="5.206" fill="currentColor"></circle>
+                </svg>
+            </button>
+
+            <nav class="mobile-menu-list" aria-label="Mobile primary">
+                <button class="mobile-menu-link" id="mobile-about-trigger" type="button">ABOUT</button>
+                <a class="mobile-menu-link" href="https://princesa-feona.myshopify.com/" target="_blank" rel="noreferrer">SHOP</a>
+                <a class="mobile-menu-link" href="https://www.instagram.com/princesa_feona/" target="_blank" rel="noreferrer">INSTAGRAM</a>
+                <a class="mobile-menu-link" href="#">CONTACT</a>
+            </nav>
+
+            <footer class="mobile-footer">
+                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
+
+        <div class="mobile-about-screen" id="mobile-about-screen" aria-hidden="true">
+            <button class="mobile-close" id="mobile-about-close" type="button" aria-label="Close about">
+                <svg class="mobile-close-icon" viewBox="0 0 45 44" aria-hidden="true">
+                    <circle cx="6.262" cy="6.213" r="5.206" fill="currentColor"></circle>
+                    <circle cx="16.773" cy="16.738" r="5.206" fill="currentColor"></circle>
+                    <circle cx="27.283" cy="27.262" r="5.206" fill="currentColor"></circle>
+                    <circle cx="37.794" cy="37.787" r="5.206" fill="currentColor"></circle>
+                    <circle cx="37.738" cy="6.213" r="5.206" fill="currentColor"></circle>
+                    <circle cx="27.227" cy="16.738" r="5.206" fill="currentColor"></circle>
+                    <circle cx="16.717" cy="27.262" r="5.206" fill="currentColor"></circle>
+                    <circle cx="6.206" cy="37.787" r="5.206" fill="currentColor"></circle>
+                </svg>
+            </button>
+
+            <div class="mobile-about-content">
+                <div class="mobile-about-media">
+                    <video id="mobile-about-video" autoplay muted loop playsinline preload="auto">
+                        <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="mobile-about-copy">
+                        <p>
+                            I'm a visual director. I <span>work with design, film, and animation.</span>
+                            I create <span>moving universes</span> for brands and artistic projects,
+                            <span>building custom teams.</span> I like to play, move, experiment.
+                        </p>
+                        <p>
+                            I'm always up for <span>bold, playful, and experimental ideas.</span>
+                            You can reach me at
+                            <a href="mailto:hi@princesafeona.com">hi@princesafeona.com</a>
+                        </p>
+                    </div>
+                    <a class="mobile-about-linkedin" href="https://www.linkedin.com/in/fiona-lena-brown-b0760b116" target="_blank" rel="noreferrer">LINKEDIN</a>
+                </div>
+            </div>
+
+            <footer class="mobile-footer mobile-about-footer">
+                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
+    </div>
+
     <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
 
     <script src="{{ url_for('static', filename='main.js') }}" defer></script>
