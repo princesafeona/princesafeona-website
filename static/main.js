@@ -43,6 +43,8 @@ const initHomepage = () => {
     }
 
     if (aboutTrigger && aboutLayer && aboutClose) {
+        const isAboutOpen = () => aboutLayer.classList.contains("is-visible");
+
         const openAbout = () => {
             document.body.classList.add("about-open");
             aboutLayer.classList.add("is-visible");
@@ -55,11 +57,30 @@ const initHomepage = () => {
             aboutLayer.setAttribute("aria-hidden", "true");
         };
 
-        aboutTrigger.addEventListener("click", openAbout);
+        aboutTrigger.addEventListener("click", () => {
+            if (isAboutOpen()) {
+                closeAbout();
+            } else {
+                openAbout();
+            }
+        });
         aboutClose.addEventListener("click", closeAbout);
 
+        document.addEventListener("click", (event) => {
+            if (!isAboutOpen()) {
+                return;
+            }
+
+            const clickedInsideFrame = event.target.closest(".video-frame");
+            const clickedTrigger = event.target.closest("#about-trigger");
+
+            if (!clickedInsideFrame && !clickedTrigger) {
+                closeAbout();
+            }
+        });
+
         document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && aboutLayer.classList.contains("is-visible")) {
+            if (event.key === "Escape" && isAboutOpen()) {
                 closeAbout();
             }
         });
