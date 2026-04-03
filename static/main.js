@@ -61,13 +61,13 @@ const initHomepage = () => {
     }
 
     if (mobileSoundToggle && mobileHeroVideo) {
-        const formatMobileTime = (seconds) => {
-            const totalSeconds = Math.max(0, Math.floor(seconds));
-            const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
-            const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-            const secs = String(totalSeconds % 60).padStart(2, "0");
+        const formatMobileTime = (remainingSeconds) => {
+            const clamped = Math.max(0, remainingSeconds);
+            const totalMinutes = Math.floor(clamped / 60);
+            const seconds = Math.floor(clamped % 60);
+            const hundredths = Math.floor((clamped % 1) * 100);
 
-            return `${hours}:${minutes}:${secs}`;
+            return `${String(totalMinutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}:${String(hundredths).padStart(2, "0")}`;
         };
 
         const updateMobileSound = () => {
@@ -84,7 +84,9 @@ const initHomepage = () => {
 
         const updateMobileTime = () => {
             if (mobileTimeCounter) {
-                mobileTimeCounter.textContent = formatMobileTime(mobileHeroVideo.currentTime || 0);
+                const duration = Number.isFinite(mobileHeroVideo.duration) ? mobileHeroVideo.duration : 0;
+                const currentTime = mobileHeroVideo.currentTime || 0;
+                mobileTimeCounter.textContent = formatMobileTime(Math.max(0, duration - currentTime));
             }
         };
 

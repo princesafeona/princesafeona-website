@@ -445,7 +445,7 @@ body.cursor-active .custom-cursor {
     .loading-band {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 0;
     }
@@ -453,7 +453,7 @@ body.cursor-active .custom-cursor {
     .loading-name {
         position: absolute;
         left: 22px;
-        bottom: 50px;
+        bottom: 24svh;
         font-size: 0.95rem;
         line-height: 0.92;
     }
@@ -461,7 +461,7 @@ body.cursor-active .custom-cursor {
     .loading-status {
         position: absolute;
         left: 22px;
-        bottom: 22px;
+        bottom: 20svh;
         justify-self: auto;
         font-size: 0.95rem;
         line-height: 0.92;
@@ -469,7 +469,7 @@ body.cursor-active .custom-cursor {
 
     .loading-gif {
         width: min(270px, 64vw);
-        margin-top: -2svh;
+        margin-top: 24svh;
     }
 
     .mobile-home,
@@ -485,7 +485,7 @@ body.cursor-active .custom-cursor {
         background: var(--bg);
         height: 100dvh;
         min-height: 100svh;
-        padding: 20px 22px 28px;
+        padding: 20px 0 28px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -497,6 +497,7 @@ body.cursor-active .custom-cursor {
         align-items: flex-start;
         justify-content: space-between;
         gap: 18px;
+        padding: 0 22px;
     }
 
     .mobile-logo {
@@ -543,7 +544,7 @@ body.cursor-active .custom-cursor {
         justify-content: space-between;
         width: 100%;
         margin-top: 12px;
-        padding: 0 2px;
+        padding: 0 22px;
         color: #111111;
         font-family: "Geist Mono", "Courier New", monospace;
         font-size: clamp(0.82rem, 2.9vw, 1rem);
@@ -586,6 +587,8 @@ body.cursor-active .custom-cursor {
     .mobile-home-footer {
         margin-top: auto;
         padding-top: 18px;
+        padding-left: 22px;
+        padding-right: 22px;
         color: rgba(17, 17, 17, 0.34);
         font-family: "Geist Mono", "Courier New", monospace;
         font-size: clamp(0.78rem, 2.8vw, 0.98rem);
@@ -679,7 +682,7 @@ body.cursor-active .custom-cursor {
     .mobile-about-content {
         flex: 1;
         min-height: 0;
-        padding: 12px 22px 0;
+        padding: 0;
     }
 
     .mobile-about-media {
@@ -689,7 +692,7 @@ body.cursor-active .custom-cursor {
         min-height: 0;
         overflow: hidden;
         background: #200908;
-        padding-top: 12px;
+        padding-top: 0;
     }
 
     .mobile-about-media video {
@@ -706,8 +709,8 @@ body.cursor-active .custom-cursor {
         position: relative;
         z-index: 1;
         max-width: 70%;
-        padding: 12px 16px 0;
-        color: #45c8ff;
+        padding: 26px 16px 0;
+        color: #ffffff;
         font-family: "Geist", Arial, sans-serif;
         font-size: clamp(1.3rem, 5.9vw, 2.15rem);
         line-height: 1.03;
@@ -724,7 +727,7 @@ body.cursor-active .custom-cursor {
 
     .mobile-about-copy span,
     .mobile-about-copy a {
-        color: #0ea9df;
+        color: #ffffff;
     }
 
     .mobile-about-copy a {
@@ -735,9 +738,9 @@ body.cursor-active .custom-cursor {
     .mobile-about-linkedin {
         position: absolute;
         left: 16px;
-        bottom: 52px;
+        bottom: 16px;
         z-index: 1;
-        color: #0ea9df;
+        color: #ffffff;
         font-family: "Geist Mono", "Courier New", monospace;
         font-size: 0.9rem;
         text-decoration: underline;
@@ -755,7 +758,14 @@ body.cursor-active .custom-cursor {
 
     @media (min-width: 480px) and (max-width: 900px) {
         .mobile-home {
-            padding: 22px 28px 30px;
+            padding: 22px 0 30px;
+        }
+
+        .mobile-header,
+        .mobile-video-meta,
+        .mobile-home-footer {
+            padding-left: 28px;
+            padding-right: 28px;
         }
 
         .mobile-logo {
