@@ -443,33 +443,35 @@ body.cursor-active .custom-cursor {
     }
 
     .loading-band {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        display: block;
         padding: 0;
     }
 
     .loading-name {
         position: absolute;
         left: 22px;
-        bottom: 24svh;
+        top: 50%;
         font-size: 0.95rem;
-        line-height: 0.92;
+        line-height: 1;
+        transform: translateY(-50%);
     }
 
     .loading-status {
         position: absolute;
-        left: 22px;
-        bottom: 20svh;
-        justify-self: auto;
+        right: 22px;
+        top: 50%;
         font-size: 0.95rem;
-        line-height: 0.92;
+        line-height: 1;
+        transform: translateY(-50%);
     }
 
     .loading-gif {
+        position: absolute;
+        left: 50%;
+        top: 25%;
         width: min(270px, 64vw);
-        margin-top: 24svh;
+        margin-top: 0;
+        transform: translate(-50%, -50%);
     }
 
     .mobile-home,
