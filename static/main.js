@@ -10,6 +10,7 @@ const initHomepage = () => {
     const mobileHeroVideo = document.getElementById("mobile-hero-video");
     const mobileAboutVideo = document.getElementById("mobile-about-video");
     const mobileSoundToggle = document.getElementById("mobile-sound-toggle");
+    const mobileTimeCounter = document.getElementById("mobile-time-counter");
     const mobileMenuTrigger = document.getElementById("mobile-menu-trigger");
     const mobileMenuScreen = document.getElementById("mobile-menu-screen");
     const mobileMenuClose = document.getElementById("mobile-menu-close");
@@ -60,6 +61,15 @@ const initHomepage = () => {
     }
 
     if (mobileSoundToggle && mobileHeroVideo) {
+        const formatMobileTime = (seconds) => {
+            const totalSeconds = Math.max(0, Math.floor(seconds));
+            const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+            const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+            const secs = String(totalSeconds % 60).padStart(2, "0");
+
+            return `${hours}:${minutes}:${secs}`;
+        };
+
         const updateMobileSound = () => {
             if (mobileHeroVideo.muted) {
                 mobileSoundToggle.textContent = "SOUND OFF";
@@ -72,7 +82,14 @@ const initHomepage = () => {
             }
         };
 
+        const updateMobileTime = () => {
+            if (mobileTimeCounter) {
+                mobileTimeCounter.textContent = formatMobileTime(mobileHeroVideo.currentTime || 0);
+            }
+        };
+
         updateMobileSound();
+        updateMobileTime();
 
         mobileSoundToggle.addEventListener("click", async () => {
             mobileHeroVideo.muted = !mobileHeroVideo.muted;
@@ -87,6 +104,9 @@ const initHomepage = () => {
 
             updateMobileSound();
         });
+
+        mobileHeroVideo.addEventListener("timeupdate", updateMobileTime);
+        mobileHeroVideo.addEventListener("loadedmetadata", updateMobileTime);
     }
 
     if (aboutTrigger && aboutLayer && aboutClose) {

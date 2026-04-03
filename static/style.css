@@ -485,10 +485,11 @@ body.cursor-active .custom-cursor {
         background: var(--bg);
         height: 100dvh;
         min-height: 100svh;
-        padding: 20px 22px 16px;
+        padding: 20px 22px 28px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        border-radius: 28px;
     }
 
     .mobile-header {
@@ -499,7 +500,7 @@ body.cursor-active .custom-cursor {
     }
 
     .mobile-logo {
-        width: min(248px, 68vw);
+        width: min(252px, 72vw);
         max-width: none;
         height: auto;
     }
@@ -536,16 +537,27 @@ body.cursor-active .custom-cursor {
         background: transparent;
     }
 
+    .mobile-video-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 12px;
+        padding: 0 2px;
+        color: #111111;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: clamp(0.82rem, 2.9vw, 1rem);
+        line-height: 1;
+    }
+
     .mobile-sound-toggle {
-        position: absolute;
-        left: 10px;
-        bottom: 12px;
+        position: static;
         border: 0;
         padding: 0;
         background: transparent;
-        color: rgba(17, 17, 17, 0.62);
-        font-family: "Geist Mono", "Courier New", monospace;
-        font-size: 0.58rem;
+        color: #111111;
+        font-family: inherit;
+        font-size: inherit;
         line-height: 1;
         writing-mode: horizontal-tb;
         text-orientation: mixed;
@@ -562,15 +574,26 @@ body.cursor-active .custom-cursor {
         bottom: 12px;
         width: 34px;
         height: auto;
-        color: rgba(17, 17, 17, 0.62);
+        color: rgba(17, 17, 17, 0.7);
     }
 
-    .mobile-rotate-note {
-        margin: 10px 0 0;
+    .mobile-time-counter {
+        margin: 0;
+        color: #111111;
+        font: inherit;
+    }
+
+    .mobile-home-footer {
+        margin-top: auto;
+        padding-top: 18px;
+        color: rgba(17, 17, 17, 0.34);
         font-family: "Geist Mono", "Courier New", monospace;
-        font-size: 0.8rem;
+        font-size: clamp(0.78rem, 2.8vw, 0.98rem);
         line-height: 1.12;
-        flex-shrink: 0;
+    }
+
+    .mobile-home-footer p {
+        margin: 0;
     }
 
     .mobile-menu-screen,
@@ -728,5 +751,29 @@ body.cursor-active .custom-cursor {
         padding: 30px 22px 32px;
         margin-top: auto;
         background: #0c0c0c;
+    }
+
+    @media (min-width: 480px) and (max-width: 900px) {
+        .mobile-home {
+            padding: 22px 28px 30px;
+        }
+
+        .mobile-logo {
+            width: min(380px, 78vw);
+        }
+
+        .mobile-video-frame {
+            margin-top: 26px;
+        }
+
+        .mobile-video-meta {
+            margin-top: 14px;
+            font-size: clamp(0.92rem, 2.3vw, 1.08rem);
+        }
+
+        .mobile-home-footer {
+            padding-top: 22px;
+            font-size: clamp(0.86rem, 2.1vw, 1.02rem);
+        }
     }
 }
