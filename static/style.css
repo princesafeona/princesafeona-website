@@ -451,7 +451,7 @@ body.cursor-active .custom-cursor {
         position: absolute;
         left: 22px;
         top: 50%;
-        font-size: 0.95rem;
+        font-size: 0.82rem;
         line-height: 1;
         transform: translateY(-50%);
     }
@@ -460,7 +460,7 @@ body.cursor-active .custom-cursor {
         position: absolute;
         right: 22px;
         top: 50%;
-        font-size: 0.95rem;
+        font-size: 0.82rem;
         line-height: 1;
         transform: translateY(-50%);
     }
