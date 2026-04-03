@@ -137,10 +137,6 @@
                     Your browser does not support the video tag.
                 </video>
 
-                <button class="mobile-sound-toggle is-muted" id="mobile-sound-toggle" type="button" aria-pressed="false">
-                    SOUND OFF
-                </button>
-
                 <svg class="mobile-video-mark" viewBox="0 0 69 57" aria-hidden="true">
                     <circle cx="21.938" cy="24.314" r="4.187" fill="currentColor"></circle>
                     <circle cx="21.938" cy="15.94" r="4.187" fill="currentColor"></circle>
@@ -169,10 +165,16 @@
                 </svg>
             </section>
 
-            <p class="mobile-rotate-note">
-                YES,<br>
-                ROTATE YOUR PHONE TO SEE IT BETTER.
-            </p>
+            <div class="mobile-video-meta">
+                <button class="mobile-sound-toggle is-muted" id="mobile-sound-toggle" type="button" aria-pressed="false">
+                    SOUND OFF
+                </button>
+                <p class="mobile-time-counter" id="mobile-time-counter">00:00:00</p>
+            </div>
+
+            <footer class="mobile-home-footer">
+                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
+            </footer>
         </div>
 
         <div class="mobile-menu-screen" id="mobile-menu-screen" aria-hidden="true">
