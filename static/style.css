@@ -403,6 +403,10 @@ body.cursor-active .custom-cursor {
 }
 
 @media (max-width: 900px) {
+    :root {
+        --mobile-logo-width: min(252px, 72vw);
+    }
+
     body {
         overflow: hidden;
     }
@@ -438,7 +442,7 @@ body.cursor-active .custom-cursor {
     .loading-logo {
         top: 24px;
         left: 22px;
-        width: min(248px, 68vw);
+        width: var(--mobile-logo-width);
         max-width: none;
     }
 
@@ -450,25 +454,25 @@ body.cursor-active .custom-cursor {
     .loading-name {
         position: absolute;
         left: 22px;
-        top: 50%;
-        font-size: 0.82rem;
+        bottom: 46px;
+        font-size: 0.95rem;
         line-height: 1;
-        transform: translateY(-50%);
+        transform: none;
     }
 
     .loading-status {
         position: absolute;
-        right: 22px;
-        top: 50%;
-        font-size: 0.82rem;
+        left: 22px;
+        bottom: 20px;
+        font-size: 0.95rem;
         line-height: 1;
-        transform: translateY(-50%);
+        transform: none;
     }
 
     .loading-gif {
         position: absolute;
         left: 50%;
-        top: 25%;
+        top: 50%;
         width: min(270px, 64vw);
         margin-top: 0;
         transform: translate(-50%, -50%);
@@ -503,7 +507,7 @@ body.cursor-active .custom-cursor {
     }
 
     .mobile-logo {
-        width: min(252px, 72vw);
+        width: var(--mobile-logo-width);
         max-width: none;
         height: auto;
     }
@@ -522,9 +526,9 @@ body.cursor-active .custom-cursor {
 
     .mobile-video-frame {
         position: relative;
-        margin-top: 22px;
+        margin: 22px auto 0;
         width: 100%;
-        aspect-ratio: 1700 / 956;
+        aspect-ratio: 1080 / 1440;
         flex: none;
         min-height: auto;
         background: transparent;
@@ -534,7 +538,7 @@ body.cursor-active .custom-cursor {
     .mobile-video-frame video {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transform: none;
         display: block;
         background: transparent;
@@ -770,6 +774,7 @@ body.cursor-active .custom-cursor {
             padding-right: 28px;
         }
 
+        .loading-logo,
         .mobile-logo {
             width: min(380px, 78vw);
         }
