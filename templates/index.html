@@ -45,8 +45,15 @@
 
         <main class="hero">
             <section class="video-frame" aria-label="Homepage video">
-                <video id="hero-video" autoplay muted loop playsinline preload="auto">
-                    <source src="{{ url_for('static', filename='video/home-video.mp4') }}" type="video/mp4">
+                <video
+                    id="hero-video"
+                    data-src="{{ url_for('static', filename='video/home-video.mp4') }}"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
                     Your browser does not support the video tag.
                 </video>
 
@@ -132,8 +139,15 @@
             </header>
 
             <section class="mobile-video-frame" aria-label="Mobile homepage video">
-                <video id="mobile-hero-video" autoplay muted loop playsinline preload="auto">
-                    <source src="{{ url_for('static', filename='video/home-video-mobile.mp4') }}" type="video/mp4">
+                <video
+                    id="mobile-hero-video"
+                    data-src="{{ url_for('static', filename='video/home-video-mobile.mp4') }}"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="none"
+                >
                     Your browser does not support the video tag.
                 </video>
 
@@ -171,13 +185,13 @@
                 </button>
                 <p class="mobile-time-counter" id="mobile-time-counter">00:00:00</p>
             </div>
-
-            <footer class="mobile-home-footer">
-                <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
-            </footer>
         </div>
 
-        <div class="mobile-menu-screen" id="mobile-menu-screen" aria-hidden="true">
+        <div class="mobile-overlay-root" id="mobile-overlay-root" aria-live="polite"></div>
+    </div>
+
+    <template id="mobile-menu-template">
+        <div class="mobile-menu-screen" id="mobile-menu-screen" aria-hidden="false">
             <button class="mobile-close" id="mobile-menu-close" type="button" aria-label="Close menu">
                 <svg class="mobile-close-icon" viewBox="0 0 45 44" aria-hidden="true">
                     <circle cx="6.262" cy="6.213" r="5.206" fill="currentColor"></circle>
@@ -202,8 +216,10 @@
                 <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
             </footer>
         </div>
+    </template>
 
-        <div class="mobile-about-screen" id="mobile-about-screen" aria-hidden="true">
+    <template id="mobile-about-template">
+        <div class="mobile-about-screen" id="mobile-about-screen" aria-hidden="false">
             <button class="mobile-close" id="mobile-about-close" type="button" aria-label="Close about">
                 <svg class="mobile-close-icon" viewBox="0 0 45 44" aria-hidden="true">
                     <circle cx="6.262" cy="6.213" r="5.206" fill="currentColor"></circle>
@@ -219,10 +235,6 @@
 
             <div class="mobile-about-content">
                 <div class="mobile-about-media">
-                    <video id="mobile-about-video" autoplay muted loop playsinline preload="auto">
-                        <source src="{{ url_for('static', filename='video/home-video-mobile.mp4') }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                     <div class="mobile-about-copy">
                         <p>
                             I'm a visual director. I <span>work with design, film, and animation.</span>
@@ -243,7 +255,7 @@
                 <p>COPYRIGHT &copy; 2026 PRINCESA FEONA.<br>ALL RIGHTS RESERVED.</p>
             </footer>
         </div>
-    </div>
+    </template>
 
     <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
 
