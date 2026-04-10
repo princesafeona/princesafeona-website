@@ -433,6 +433,17 @@ body.cursor-active .custom-cursor {
         overflow: hidden;
     }
 
+    .mobile-overlay-root {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    .mobile-overlay-root > * {
+        pointer-events: auto;
+    }
+
     .loading-overlay {
         background: #111111;
         height: 100dvh;
@@ -456,7 +467,7 @@ body.cursor-active .custom-cursor {
         left: 22px;
         bottom: 46px;
         font-size: 0.95rem;
-        line-height: 1;
+        line-height: 0.92;
         transform: none;
     }
 
@@ -465,7 +476,7 @@ body.cursor-active .custom-cursor {
         left: 22px;
         bottom: 20px;
         font-size: 0.95rem;
-        line-height: 1;
+        line-height: 0.92;
         transform: none;
     }
 
@@ -491,7 +502,7 @@ body.cursor-active .custom-cursor {
         background: var(--bg);
         height: 100dvh;
         min-height: 100svh;
-        padding: 20px 0 28px;
+        padding: 20px 0 18px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -590,36 +601,12 @@ body.cursor-active .custom-cursor {
         font: inherit;
     }
 
-    .mobile-home-footer {
-        margin-top: auto;
-        padding-top: 18px;
-        padding-left: 22px;
-        padding-right: 22px;
-        color: rgba(17, 17, 17, 0.34);
-        font-family: "Geist Mono", "Courier New", monospace;
-        font-size: clamp(0.78rem, 2.8vw, 0.98rem);
-        line-height: 1.12;
-    }
-
-    .mobile-home-footer p {
-        margin: 0;
-    }
-
     .mobile-menu-screen,
     .mobile-about-screen {
         background: #111111;
         color: #f3f1ec;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 0.25s ease, visibility 0.25s ease;
-    }
-
-    .mobile-menu-screen.is-visible,
-    .mobile-about-screen.is-visible {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+        position: absolute;
+        inset: 0;
     }
 
     .mobile-menu-screen {
@@ -764,12 +751,11 @@ body.cursor-active .custom-cursor {
 
     @media (min-width: 480px) and (max-width: 900px) {
         .mobile-home {
-            padding: 22px 0 30px;
+            padding: 22px 0 18px;
         }
 
         .mobile-header,
-        .mobile-video-meta,
-        .mobile-home-footer {
+        .mobile-video-meta {
             padding-left: 28px;
             padding-right: 28px;
         }
@@ -786,11 +772,6 @@ body.cursor-active .custom-cursor {
         .mobile-video-meta {
             margin-top: 14px;
             font-size: clamp(0.92rem, 2.3vw, 1.08rem);
-        }
-
-        .mobile-home-footer {
-            padding-top: 22px;
-            font-size: clamp(0.86rem, 2.1vw, 1.02rem);
         }
     }
 }
